@@ -5,7 +5,7 @@ import TodoLists from './todos/TodoLists'
 function Dashboard() {
     const token = sessionStorage.getItem("token");
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  const BASE_URL = "https://auth-todo-list-mern-production-e11d.up.railway.app";
+  const BASE_URL = "https://mern-crud-server-seven.vercel.app";
   
   const [userTodos, setUserTodos] = useState(null);
   //to get all todos
