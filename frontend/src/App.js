@@ -14,16 +14,16 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Toaster
-    position="top-right"
-    reverseOrder={true}
-    />
-    <Routes>
-      <Route path="/" element = {<Login  BASE_URL={BASE_URL} />}/>
-      <Route path="/signup" element = {<Register  BASE_URL={BASE_URL} />}/>
-      <Route path="/dashboard" element = {<Dashboard/>}/>
+      <Toaster
+      position="top-right"
+      reverseOrder={true}
+      />
+      <Routes>
+        <Route path="/" element = {<Login  BASE_URL={BASE_URL} />}/>
+        <Route path="/signup" element = {<Register  BASE_URL={BASE_URL} />}/>
+        <Route path="/dashboard" element = {<Dashboard/>}/>
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
