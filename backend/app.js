@@ -8,11 +8,10 @@ const userRoutes = require("./Routes/userRoutes");
 const cookieParser = require('cookie-parser');
 const auth = require("./middleware/auth");
 
-
- 
 app.use(cors({
   credentials : true,
-  origin : "https://todo-web-app-beta.vercel.app/"
+  // origin : "https://sprightly-kashata-04364e.netlify.app"
+  origin : "http://localhost:3000"
 }));
 app.use(cookieParser())
 app.use(express.json());

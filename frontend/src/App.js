@@ -7,7 +7,8 @@ import  {Toaster} from "react-hot-toast"
 
 function App() {
 
-    const BASE_URL = "https://todo-server-opal.vercel.app";
+    const BASE_URL = "http://localhost:4000";
+    // const BASE_URL = "https://crud-todo-server.onrender.com";
       
 
   return (
