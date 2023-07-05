@@ -12,7 +12,7 @@ const auth = require("./middleware/auth");
  
 app.use(cors({
   credentials : true,
-  origin : "https://todo-web-app-beta.vercel.app"
+  origin : "https://todo-web-app-beta.vercel.app/"
 }));
 app.use(cookieParser())
 app.use(express.json());
