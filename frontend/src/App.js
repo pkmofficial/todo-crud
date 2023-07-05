@@ -7,7 +7,7 @@ import  {Toaster} from "react-hot-toast"
 
 function App() {
 
-    const BASE_URL = "https://mern-crud-server-seven.vercel.app";
+    const BASE_URL = "https://todo-server-opal.vercel.app";
       
 
   return (
