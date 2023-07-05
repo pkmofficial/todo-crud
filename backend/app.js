@@ -11,7 +11,8 @@ const auth = require("./middleware/auth");
 app.use(cors({
   credentials : true,
   // origin : "https://sprightly-kashata-04364e.netlify.app"
-  origin : "http://localhost:3000"
+  // origin : "http://localhost:3000"
+  origin : "https://todo-crud-app-murex.vercel.app"
 }));
 app.use(cookieParser())
 app.use(express.json());
