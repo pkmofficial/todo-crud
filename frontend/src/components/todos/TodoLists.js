@@ -185,113 +185,117 @@ function TodoLists({fetchUserTodos , userTodos, setUserTodos, BASE_URL}) {
 
 
   return (
-
-    <div>
-      <form className='todoForm flex flex-row items-center justify-between border-sold border-2 w-[50rem] h-[5rem] rounded-[1rem] bg-[white] mb-[1rem]  'onSubmit={handleSearch} >
-    <div>
-  <input type="text" placeholder="Enter to search" className='w-[10rem] m-[1rem] px-[1rem] rounded-[0.5rem] border-sold border-2 placeholder:italic  placeholder:relative placeholder:left-[0.1rem] placeholder:ml-4 h-[3rem] focus:outline-none focus:ring-[0.3rem] focus:ring-violet-700 '
-    value={search}
-  onChange={(e)=>{setSearch(e.target.value)}}
-  ></input>
-  <button type='submit' className='text-[#242B2E] bg-[#CAD5E2] px-[3rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'  >Search</button>
-  </div>
-
-  <div className='flex flex-row items-center justify-center space-x-4 mr-[1rem]'>
-    <p>
-      Sort 
-    </p> 
-    {/* <select onChange={}  value={}  className=' rounded-[0.5rem]   border-solid border-2 border-bg-gray-300' name="sorting" id="sort">
-<option   value="">Select Option</option>
-<option value="creation"   > By Creation</option>
-<option value="updation">By Updation</option>
-</select> */}
-    <button type='button' className='text-[#242B2E] bg-[#CAD5E2] px-[1rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'  onClick={todoCreationDate}  >by creation</button>
-    <button type='button' className='text-[#242B2E] bg-[#CAD5E2] px-[1rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'  onClick={todoUpdationDate}  >by updation</button>
-  </div>
-
-
-  </form>
-
-
-
-    <div className='shadow-md bg-slate-100/50  w-[50rem] mx-auto mt-[1rem]'>
-
-      
-      {userTodos && userTodos.map((user)=>{
-          
-       return <div className='overflow-hidden '>
-      {/* title bar */}
-      
-      <label>
-        <input className='opacity-0 peer' type="checkbox"/>
-        <div className='flex flex-row items-center justify-between  mx-[1rem]'>
-        <div  className='flex flex-row items-center justify-between  '>
-      <p className='p-[1.2rem] inline-block cursor-pointer' key={user._id} >{user.Title}</p>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" cursor-pointer w-4 h-4 float-right peer-checked:rotate-180 ">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-      </svg>
-      </div>
-
-          <div  className='flex flex-row items-center justify-between mx-[1rem] space-x-[2rem]'>
-        <button className='bg-gray-300 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem]'
-              
-          onClick={()=>{handleEditTitle(user)}}
-         
-        >Edit</button>
-        <button className='bg-red-300 active:bg-red-400 px-[0.8rem] rounded-[0.3rem]' 
-          onClick={()=>{
-            handleDeleteTitle(user)
-          }}
-        
-        >Delete</button>
-        </div>
-      </div>
-
-
-          {/* task Section under title */}
-      <div className='arrayTasks bg-slate-200/50 max-h-0 peer-checked:max-h-screen '>
-
-                  {/* Adding Tasks inside title */}
-          <div className='flex flex-row items-center justify-start ml-[1rem] h-[2.5] space-x-[1.5rem] '>
-            <div>
-            <input type="text" placeholder='Enter tasks' className='mt-[1.5rem] w-[30rem] h-[2.5rem] rounded-[0.3rem]  px-[1rem] focus:outline-none focus:ring-[0.1rem] focus:ring-gray-500 placeholder:italic  '
-            value={tasks}
-            onChange={(e)=>{setTasks(e.target.value)}}
-            
-            />
-            </div>
-            <div>
-            <button   type='button' onClick={()=>handdleTasksForTitle(user._id)}   className=' relative bg-gray-300 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem] top-[0.8rem] ' >Add</button>
-            </div>
-          </div>
-            {/* Tasks inside title */}
-                   
-                   { user.Tasks.map((tasks,index)=>{
-                return (<div className=' flex flex-row items-center justify-between'>
-             <div>
-             <p className="p-[1.2rem]" key={user._id} >{tasks}</p>
-             </div>
-             <div  className='flex flex-row items-center justify-between mr-[2rem] space-x-[2rem]'>
-             <button className='bg-gray-300 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem]' onClick={()=>{handleEditTaskForTitle(user,index)}}  >Edit</button>
-             <button className='bg-red-300  active:bg-red-400 px-[0.8rem] rounded-[0.3rem]' onClick={()=>{
-              handleDeleteTaskForTitle(user,index)}}  >Delete</button>
-             </div>
-             </div>)
-                })}
-             
-          
-      
-
-        </div>
-      </label>
-    </div>
     
-      })}
+    <div className='container mt-10 '>
+
+    
+
+
+      <form onSubmit={handleSearch} className='text-center'>
+      <div className=" flex flex-col md:flex-row bg-blue-300 py-3 ">
+        <div className="text-center w-full md:w-1/2 md:mt-3 my-auto py-auto pb-2 ">
+          {/* Content for the first child */}
+          {/* <div> */}
+            <input type="text" placeholder="Enter to search any item" className='w:50% mr-3 px-3 rounded-[0.5rem] border-sold border-2 placeholder:italic  placeholder:relative placeholder:left-[0.1rem] placeholder:ml-4 h-[2.5rem] focus:outline-none focus:ring-[0.3rem] focus:ring-violet-700 '
+              value={search}
+            onChange={(e)=>{setSearch(e.target.value)}}
+            ></input>
+
+            <button type='submit' className='text-[#242B2E] bg-[#CAD5E2] px-[1rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'   >Search</button>
+          {/* </div> */}
+        </div>
+        <div className="w-full md:w-1/2 md:mt-3 my-auto py-auto ">
+          {/* Content for the second child */}
+          <div className='flex flex-row items-center justify-center space-x-4 mr-[1rem]'>
+            {/* <select onChange={}  value={}  className=' rounded-[0.5rem]   border-solid border-2 border-bg-gray-300' name="sorting" id="sort">
+            <option   value="">Select Option</option>
+            <option value="creation"   > By Creation</option>
+            <option value="updation">By Updation</option>
+            </select> */}
+            <button type='button' className='text-[#242B2E] bg-[#CAD5E2] px-[1rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'  onClick={todoCreationDate}  > Sort by creation</button>
+            <button type='button' className='text-[#242B2E] bg-[#CAD5E2] px-[1rem] py-[0.5em] rounded-[0.5rem] pointer-cursor font-bold active:bg-violet-700 active:text-white'  onClick={todoUpdationDate}  > Sort by updation</button>
+          </div>
+        </div>
+      </div>
+      </form>
+    
+      <div className=' shadow-md bg-blue-200  '>
+
+        
+        {userTodos && userTodos.map((user)=>{
+            
+        return <div className='overflow-hidden '>
+        {/* title bar */}
+        
+        <label>
+          <input className='opacity-0 peer' type="checkbox"/>
+          <div className='flex flex-row items-center justify-between   mx-[1rem]'>
+          <div  className='flex flex-row items-center justify-start sm:justify-between  '>
+        <p className='p-[1.2rem] inline-block cursor-pointer' key={user._id} >{user.Title}</p>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" cursor-pointer w-4 h-4 float-right peer-checked:rotate-180 ">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+        </div>
+
+            <div  className='flex flex-row items-center justify-between mx-[1rem] space-x-[2rem]'>
+          <button className='bg-green-300 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem]'
+                
+            onClick={()=>{handleEditTitle(user)}}
+          
+          >Edit</button>
+          <button className='bg-red-300 active:bg-red-400 px-[0.8rem] rounded-[0.3rem]' 
+            onClick={()=>{
+              handleDeleteTitle(user)
+            }}
+          
+          >Delete</button>
+          </div>
+        </div>
+
+
+            {/* task Section under title */}
+        <div className='arrayTasks bg-slate-200/50 max-h-0 peer-checked:max-h-screen '>
+
+                    {/* Adding Tasks inside title */}
+            <div className='flex flex-row items-center justify-start ml-[1rem] h-[2.5] space-x-[1.5rem] '>
+              <div>
+              <input type="text" placeholder='Enter tasks' className='mt-[1.5rem]  h-[2.5rem] rounded-[0.3rem]  px-[1rem] focus:outline-none focus:ring-[0.1rem] focus:ring-gray-500 placeholder:italic  '
+              value={tasks}
+              onChange={(e)=>{setTasks(e.target.value)}}
+              />
+              </div>
+              <div>
+              <button   type='button' onClick={()=>handdleTasksForTitle(user._id)}   className=' relative bg-blue-200 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem] top-[0.8rem] ' >Add</button>
+              </div>
+            </div>
+              {/* Tasks inside title */}
+                    
+                    { user.Tasks.map((tasks,index)=>{
+                  return (<div className=' flex flex-row items-center justify-between'>
+              <div>
+              <p className="p-[1.2rem]" key={user._id} >{tasks}</p>
+              </div>
+              <div  className='flex flex-row items-center justify-between mr-[2rem] space-x-[2rem]'>
+              <button className='bg-green-200 active:bg-gray-400 px-[0.8rem] rounded-[0.3rem]' onClick={()=>{handleEditTaskForTitle(user,index)}}  >Edit</button>
+              <button className='bg-red-300  active:bg-red-400 px-[0.8rem] rounded-[0.3rem]' onClick={()=>{
+                handleDeleteTaskForTitle(user,index)}}  >Delete</button>
+              </div>
+              </div>)
+                  })}
+              
+            
+        
+
+          </div>
+        </label>
+      </div>
       
+        })}
+        
 
 
 
-       
+        
       </div>
     </div>
   )
