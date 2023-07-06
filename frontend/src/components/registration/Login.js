@@ -179,6 +179,7 @@ function Login({BASE_URL}) {
             <a
               href="https://www.instagram.com/pabitra_kumarrr/"
               type="button"
+              target="_blank" rel="noopener noreferrer"
               class="m-1 h-9 w-9 rounded-full border-2 border-black uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
               data-te-ripple-init
               data-te-ripple-color="dark">
@@ -195,6 +196,7 @@ function Login({BASE_URL}) {
             <a
               href="https://www.linkedin.com/in/pk-mohanty/"
               type="button"
+              target="_blank" rel="noopener noreferrer"
               class="m-1 h-9 w-9 rounded-full border-2 border-black uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
               data-te-ripple-init
               data-te-ripple-color="dark">
@@ -211,6 +213,7 @@ function Login({BASE_URL}) {
             <a
               href="https://github.com/pkmofficial"
               type="button"
+              target="_blank" rel="noopener noreferrer"
               class="m-1 h-9 w-9 rounded-full border-2 border-black uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
               data-te-ripple-init
               data-te-ripple-color="light">
