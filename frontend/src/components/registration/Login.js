@@ -172,8 +172,8 @@ function Login({BASE_URL}) {
       </div>
       
       {/* footer */}
-      <footer className="bg-white text-center text-red-1000">
-        <div class="container px-6 ">
+      <footer className="bg-white text-center py-auto text-red-1000">
+        <div class="px-6 py-auto">
           {/* <!-- Social media icons container --> */}
           <div class="mb-6 flex justify-center">
             <a
